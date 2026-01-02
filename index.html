@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Law Family | أكاديمية الحقوق الرقمية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #1a2a6c;
+        --secondary-color: #b21f1f;
+        --accent-color: #fdbb2d;
+        --bg-light: #f4f7f6;
+        --text-dark: #2c3e50;
+        --text-gray: #7f8c8d;
+        --white: #ffffff;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Cairo", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Header & Navigation */
+      header {
+        background: var(--primary-color);
+        color: var(--white);
+        padding: 1rem 5%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: var(--shadow);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .logo-placeholder {
+        width: 50px;
+        height: 50px;
+        background: var(--accent-color);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+
+      .logo h1 {
+        font-size: 1.5rem;
+        font-weight: 900;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .logo span {
+        color: var(--accent-color);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+      }
+
+      nav a {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+      }
+
+      nav a:hover {
+        color: var(--accent-color);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+            rgba(26, 42, 108, 0.85),
+            rgba(26, 42, 108, 0.85)
+          ),
+          url("https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+        background-size: cover;
+        background-position: center;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--white);
+        padding: 0 20px;
+      }
+
+      /* Main Layout */
+      .container {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 30px;
+        padding: 40px 5%;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      /* Sidebar Navigation */
+      .sidebar {
+        background: var(--white);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        height: fit-content;
+        position: sticky;
+        top: 100px;
+      }
+
+      .sidebar h3 {
+        border-bottom: 2px solid var(--primary-color);
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+        color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .accordion-item {
+        margin-bottom: 12px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .accordion-header {
+        background: #ffffff;
+        padding: 15px;
+        cursor: pointer;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: var(--transition);
+      }
+
+      .accordion-header.disabled {
+        background: #f8f9fa;
+        color: #ccc;
+        cursor: not-allowed;
+      }
+
+      .badge-soon {
+        background: #eee;
+        color: #777;
+        font-size: 0.7rem;
+        padding: 2px 8px;
+        border-radius: 4px;
+      }
+      .badge-active {
+        background: #27ae60;
+        color: white;
+        font-size: 0.7rem;
+        padding: 2px 8px;
+        border-radius: 4px;
+      }
+
+      .accordion-content {
+        display: none;
+        background: #fafafa;
+        flex-direction: column;
+        border-top: 1px solid #eee;
+      }
+
+      .term-header {
+        padding: 12px 20px;
+        background: #f1f1f1;
+        font-weight: 700;
+        border-bottom: 1px solid #e0e0e0;
+        cursor: pointer;
+        color: var(--primary-color);
+      }
+
+      .subjects-list {
+        display: none;
+        flex-direction: column;
+      }
+
+      .sub-link {
+        padding: 12px 30px;
+        text-decoration: none;
+        color: var(--text-dark);
+        font-size: 0.95rem;
+        transition: var(--transition);
+        cursor: pointer;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .sub-link:hover {
+        background: var(--primary-color);
+        color: white;
+        padding-right: 35px;
+      }
+
+      /* Content Area */
+      .main-content {
+        background: var(--white);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        min-height: 800px;
+      }
+
+      .section-title {
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        border-right: 6px solid var(--accent-color);
+        padding-right: 15px;
+      }
+
+      /* Category Tabs */
+      .category-tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+        position: sticky;
+        top: 75px;
+        background: white;
+        z-index: 10;
+      }
+
+      .tab-btn {
+        padding: 10px 20px;
+        border: none;
+        background: #f1f1f1;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 700;
+        transition: var(--transition);
+      }
+
+      .tab-btn.active {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      /* Resource Grid */
+      .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .resource-card {
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 20px;
+        background: #fff;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .resource-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+        border-color: var(--primary-color);
+      }
+
+      .resource-type {
+        font-size: 0.8rem;
+        color: var(--accent-color);
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+      .resource-title {
+        font-weight: 700;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        color: var(--primary-color);
+      }
+
+      .btn-link {
+        display: block;
+        text-align: center;
+        padding: 12px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 700;
+        margin-top: auto;
+      }
+
+      .btn-video {
+        background: #c0392b;
+        color: white;
+      }
+      .btn-audio {
+        background: #2980b9;
+        color: white;
+      }
+      .btn-pdf {
+        background: #27ae60;
+        color: white;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      /* Mobile Adjustments */
+      @media (max-width: 992px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          position: static;
+          margin-bottom: 20px;
+        }
+        .category-tabs {
+          top: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <div class="logo-placeholder">LF</div>
+        <div class="logo">
+          <h1>Law <span>Family</span></h1>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#" onclick="showHome()">الرئيسية</a></li>
+          <li><a href="#">مكتبة الملفات</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <h2>أكاديمية LAW FAMILY</h2>
+      <p>محتوى تعليمي قانوني مُنظم لطلاب الحقوق</p>
+    </div>
+
+    <div class="container">
+      <aside class="sidebar">
+        <h3>⚖️ المحتوى الدراسي</h3>
+
+        <div class="accordion-item">
+          <div class="accordion-header disabled">
+            الفرقة الأولى <span class="badge-soon">قريباً</span>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header disabled">
+            الفرقة الثانية <span class="badge-soon">قريباً</span>
+          </div>
+        </div>
+
+        <!-- Year 3 -->
+        <div class="accordion-item">
+          <div
+            class="accordion-header"
+            onclick="toggleElement('year3-content')"
+          >
+            الفرقة الثالثة <span class="badge-active">متاح الآن</span>
+          </div>
+          <div
+            id="year3-content"
+            class="accordion-content"
+            style="display: block"
+          >
+            <div class="term-header" onclick="toggleElement('y3t1-subjects')">
+              الترم الأول (نشط) ▾
+            </div>
+            <div id="y3t1-subjects" class="subjects-list" style="display: flex">
+              <span class="sub-link" onclick="loadSubject('مدني')"
+                >قانون مدني</span
+              >
+              <span class="sub-link" onclick="loadSubject('عمل')"
+                >قانون عمل</span
+              >
+              <span class="sub-link" onclick="loadSubject('عقوبات')"
+                >قانون عقوبات</span
+              >
+              <span class="sub-link" onclick="loadSubject('تجاري')"
+                >قانون تجاري</span
+              >
+              <span class="sub-link" onclick="loadSubject('إنجليزي')"
+                >إنجليزي قانوني</span
+              >
+            </div>
+            <div class="term-header" style="color: #ccc; cursor: default">
+              الترم الثاني (قريباً)
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header disabled">
+            الفرقة الرابعة <span class="badge-soon">قريباً</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content" id="content-anchor">
+        <div id="homeView">
+          <div class="section-title">مرحباً بك في عائلة القانون</div>
+          <p>
+            يرجى اختيار المادة العلمية من القائمة الجانبية لعرض الدروس المتاحة.
+          </p>
+          <div style="margin-top: 40px; text-align: center; color: #ccc">
+            <p>جميع المواد لعام 2024-2025 سيتم تحديثها دورياً</p>
+          </div>
+        </div>
+
+        <div id="subjectView" class="hidden">
+          <div class="section-title" id="subjectNameDisplay">اسم المادة</div>
+
+          <!-- Category Selector -->
+          <div class="category-tabs">
+            <button class="tab-btn active" onclick="filterContent('all', this)">
+              الكل
+            </button>
+            <button class="tab-btn" onclick="filterContent('video', this)">
+              فيديوهات (YouTube)
+            </button>
+            <button class="tab-btn" onclick="filterContent('audio', this)">
+              ريكوردات (Telegram)
+            </button>
+            <button class="tab-btn" onclick="filterContent('pdf', this)">
+              ملفات PDF
+            </button>
+          </div>
+
+          <div class="resource-grid" id="resourceContainer">
+            <!-- Dynamic Content -->
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer
+      style="
+        background: #111;
+        color: #777;
+        text-align: center;
+        padding: 40px 20px;
+        margin-top: 60px;
+      "
+    >
+      <div style="color: white; font-weight: bold; margin-bottom: 10px">
+        LAW FAMILY ACADEMY
+      </div>
+      <p>جميع الحقوق محفوظة &copy; 2024</p>
+    </footer>
+
+    <script>
+      // Data Structure
+      const materials = {
+        مدني: [
+          {
+            type: "video",
+            title: "شرح أركان العقد الأساسية",
+            link: "https://youtube.com/...",
+            desc: "شرح مفصل لكافة أركان العقد على يوتيوب",
+          },
+          {
+            type: "audio",
+            title: "بصمة مقدمة القانون المدني",
+            link: "https://t.me/...",
+            desc: "ريكورد توضيحي من قناة التليجرام",
+          },
+          {
+            type: "pdf",
+            title: "ملخص مادة المدني (الترم الأول)",
+            link: "#",
+            desc: "ملف PDF شامل للمراجعة",
+          },
+        ],
+        عمل: [
+          {
+            type: "video",
+            title: "شرح عقد العمل الفردي",
+            link: "#",
+            desc: "محاضرة فيديو كاملة",
+          },
+          {
+            type: "audio",
+            title: "ريكورد مراجعة قانون العمل",
+            link: "#",
+            desc: "تسجيل صوتي لأهم نقاط مادة العمل",
+          },
+          {
+            type: "pdf",
+            title: "ملزمة قانون العمل",
+            link: "#",
+            desc: "ملف جاهز للطباعة",
+          },
+        ],
+        عقوبات: [
+          {
+            type: "video",
+            title: "محاضرة الجرائم والعقوبات",
+            link: "#",
+            desc: "شرح فيديو يوتيوب",
+          },
+          {
+            type: "audio",
+            title: "ريكورد شرح قانون العقوبات",
+            link: "#",
+            desc: "تسجيل تيليجرام",
+          },
+          {
+            type: "pdf",
+            title: "ملخص العقوبات",
+            link: "#",
+            desc: "مذكرة شرح مبسط",
+          },
+        ],
+        تجاري: [
+          {
+            type: "video",
+            title: "محاضرة الأعمال التجارية",
+            link: "https://youtu.be/9kGHp3dAyNQ?si=uAxDzBG1joOxfSPd",
+            desc: "شرح فيديو يوتيوب",
+          },
+          {
+            type: "video",
+            title: "زتونة شركة المساهمة",
+            link: "https://youtu.be/9kGHp3dAyNQ?si=uAxDzBG1joOxfSPd",
+            desc: "شرح فيديو يوتيوب",
+          },
+          {
+            type: "audio",
+            title: "ريكورد القانون التجاري",
+            link: "https://t.me/Law_family_Alex2/2115",
+            desc: "بصمة صوتية",
+          },
+          {
+            type: "pdf",
+            title: "ملخص شركة المساهمة",
+            link: "https://t.me/Law_family_Alex2/2167",
+            desc: "ملف PDF",
+          },
+        ],
+        إنجليزي: [
+          {
+            type: "video",
+            title: "Legal Terms Lecture",
+            link: "#",
+            desc: "فيديو شرح المصطلحات القانونية",
+          },
+          {
+            type: "audio",
+            title: "Audio Pronunciation Guide",
+            link: "#",
+            desc: "ريكورد نطق المصطلحات",
+          },
+          {
+            type: "pdf",
+            title: "English Materials",
+            link: "#",
+            desc: "ملزمة المادة",
+          },
+        ],
+      };
+
+      let currentSubject = "";
+
+      function toggleElement(id) {
+        const el = document.getElementById(id);
+        const isVisible =
+          el.style.display === "flex" || el.style.display === "block";
+        el.style.display = isVisible
+          ? "none"
+          : id.includes("subjects")
+          ? "flex"
+          : "block";
+      }
+
+      function loadSubject(name) {
+        currentSubject = name;
+        const homeView = document.getElementById("homeView");
+        const subjectView = document.getElementById("subjectView");
+        const container = document.getElementById("resourceContainer");
+        const display = document.getElementById("subjectNameDisplay");
+
+        // Switch views
+        homeView.classList.add("hidden");
+        subjectView.classList.remove("hidden");
+        display.innerText = "مادة القانون ال" + name;
+
+        // Reset tabs to "All"
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        document
+          .querySelector('.tab-btn[onclick*="all"]')
+          .classList.add("active");
+
+        // Render
+        renderResources("all");
+
+        // Auto-Scroll to content with offset for header/tabs
+        const anchor = document.getElementById("content-anchor");
+        const offset = 80;
+        const elementPosition =
+          anchor.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+
+      function renderResources(filter) {
+        const container = document.getElementById("resourceContainer");
+        const data = materials[currentSubject] || [];
+
+        const filteredData =
+          filter === "all" ? data : data.filter((item) => item.type === filter);
+
+        if (filteredData.length === 0) {
+          container.innerHTML =
+            '<div style="grid-column: 1/-1; text-align: center; padding: 60px; color: #999;"><h3>لا يوجد محتوى متوفر حالياً</h3><p>يرجى اختيار قسم آخر أو العودة لاحقاً</p></div>';
+          return;
+        }
+
+        container.innerHTML = filteredData
+          .map((item) => {
+            let btnClass = "btn-video";
+            let btnText = "مشاهدة الفيديو (YouTube)";
+            let icon = "📺";
+
+            if (item.type === "audio") {
+              btnClass = "btn-audio";
+              btnText = "استماع ريكورد (Telegram)";
+              icon = "🎙️";
+            }
+            if (item.type === "pdf") {
+              btnClass = "btn-pdf";
+              btnText = "تحميل الملف (PDF)";
+              icon = "📄";
+            }
+
+            return `
+                    <div class="resource-card">
+                        <span class="resource-type">${icon} ${
+              item.type === "video"
+                ? "فيديو"
+                : item.type === "audio"
+                ? "ريكورد"
+                : "ملف"
+            }</span>
+                        <strong class="resource-title">${item.title}</strong>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">${
+                          item.desc
+                        }</p>
+                        <a href="${
+                          item.link
+                        }" target="_blank" class="btn-link ${btnClass}">${btnText}</a>
+                    </div>
+                `;
+          })
+          .join("");
+      }
+
+      function filterContent(type, btn) {
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderResources(type);
+      }
+
+      function showHome() {
+        document.getElementById("homeView").classList.remove("hidden");
+        document.getElementById("subjectView").classList.add("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>
