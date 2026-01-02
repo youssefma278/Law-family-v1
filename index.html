@@ -1,257 +1,508 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Law Family | أكاديمية الحقوق الرقمية</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Cairo -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            scroll-behavior: smooth;
-        }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1a2a6c;
-            border-radius: 10px;
-        }
-        .active-tab {
-            background-color: #1a2a6c !important;
-            color: white !important;
-        }
+      body {
+        font-family: "Cairo", sans-serif;
+        scroll-behavior: smooth;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1a2a6c;
+        border-radius: 10px;
+      }
+      .active-tab {
+        background-color: #1a2a6c !important;
+        color: white !important;
+      }
     </style>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1a2a6c',
-                        accent: '#fdbb2d',
-                        secondary: '#b21f1f',
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a2a6c",
+              accent: "#fdbb2d",
+              secondary: "#b21f1f",
+            },
+          },
+        },
+      };
     </script>
-</head>
-<body class="bg-gray-50 text-gray-800">
-
+  </head>
+  <body class="bg-gray-50 text-gray-800">
     <!-- Header -->
     <header class="bg-primary text-white sticky top-0 z-50 shadow-lg">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="bg-accent text-primary font-bold w-10 h-10 flex items-center justify-center rounded-lg shadow-inner">LF</div>
-                <h1 class="text-xl md:text-2xl font-black tracking-wider uppercase">Law <span class="text-accent">Family</span></h1>
-            </div>
-            <nav class="hidden md:block">
-                <ul class="flex gap-6 font-semibold">
-                    <li><a href="#" onclick="showHome()" class="hover:text-accent transition">الرئيسية</a></li>
-                    <li><a href="#" class="hover:text-accent transition">مكتبة الملفات</a></li>
-                </ul>
-            </nav>
-            <!-- Mobile Menu Icon -->
-            <div class="md:hidden text-accent">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </div>
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="text-primary font-bold w-16 h-16 flex items-center justify-center rounded-lg shadow-inner"
+          >
+            <img src="/Artboard 3.png" alt="law-img" class="img-family" />
+          </div>
+          <h1 class="text-xl md:text-2xl font-black tracking-wider uppercase">
+            Law <span class="text-accent">Family</span>
+          </h1>
         </div>
+        <nav class="hidden md:block">
+          <ul class="flex gap-6 font-semibold">
+            <li>
+              <a
+                href="#"
+                onclick="showHome()"
+                class="hover:text-accent transition"
+                >الرئيسية</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-accent transition">مكتبة الملفات</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- Mobile Menu Icon -->
+        <div class="md:hidden text-accent">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="relative bg-primary py-16 md:py-24 overflow-hidden">
-        <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center"></div>
-        <div class="container mx-auto px-4 relative z-10 text-center text-white">
-            <h2 class="text-3xl md:text-5xl font-black mb-4">أكاديمية LAW FAMILY</h2>
-            <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto font-light">بوابتك الرقمية للتفوق في كليات الحقوق - محتوى منظم وشامل</p>
-        </div>
+      <div
+        class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center"
+      ></div>
+      <div class="container mx-auto px-4 relative z-10 text-center text-white">
+        <h2 class="text-3xl md:text-5xl font-black mb-4">
+          أكاديمية LAW FAMILY
+        </h2>
+        <p
+          class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto font-light"
+        >
+          بوابتك الرقمية للتفوق في كليات الحقوق - محتوى منظم وشامل
+        </p>
+      </div>
     </section>
 
     <!-- Main Content Container -->
     <div class="container mx-auto px-4 py-8 lg:flex lg:gap-8">
-        
-        <!-- Sidebar -->
-        <aside class="lg:w-1/4 mb-8 lg:mb-0">
-            <div class="bg-white rounded-2xl shadow-sm p-5 sticky top-24">
-                <h3 class="text-primary font-bold text-lg mb-4 border-b-2 border-primary pb-2 flex items-center gap-2">
-                    ⚖️ المحتوى الدراسي
-                </h3>
-                
-                <div class="space-y-3">
-                    <!-- Year 1 & 2 -->
-                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-100 flex justify-between items-center text-gray-400">
-                        <span>الفرقة الأولى</span>
-                        <span class="text-[10px] bg-gray-200 px-2 py-1 rounded text-gray-500">قريباً</span>
-                    </div>
-                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-100 flex justify-between items-center text-gray-400">
-                        <span>الفرقة الثانية</span>
-                        <span class="text-[10px] bg-gray-200 px-2 py-1 rounded text-gray-500">قريباً</span>
-                    </div>
+      <!-- Sidebar -->
+      <aside class="lg:w-1/4 mb-8 lg:mb-0">
+        <div class="bg-white rounded-2xl shadow-sm p-5 sticky top-24">
+          <h3
+            class="text-primary font-bold text-lg mb-4 border-b-2 border-primary pb-2 flex items-center gap-2"
+          >
+            ⚖️ المحتوى الدراسي
+          </h3>
 
-                    <!-- Year 3 (Active) -->
-                    <div class="border border-blue-100 rounded-xl overflow-hidden shadow-sm">
-                        <button onclick="toggleElement('y3-content')" class="w-full flex justify-between items-center p-4 bg-white hover:bg-blue-50 transition font-bold text-primary">
-                            الفرقة الثالثة
-                            <span class="text-[10px] bg-green-500 text-white px-2 py-1 rounded shadow-sm">متاح</span>
-                        </button>
-                        <div id="y3-content" class="bg-gray-50">
-                            <div class="p-3 bg-gray-200 text-sm font-black text-primary border-b border-gray-300">الترم الأول (نشط)</div>
-                            <div class="flex flex-col">
-                                <button onclick="loadSubject('مدني')" class="text-right py-3 px-6 hover:bg-primary hover:text-white transition text-sm border-b border-gray-100">قانون مدني</button>
-                                <button onclick="loadSubject('عمل')" class="text-right py-3 px-6 hover:bg-primary hover:text-white transition text-sm border-b border-gray-100">قانون عمل</button>
-                                <button onclick="loadSubject('عقوبات')" class="text-right py-3 px-6 hover:bg-primary hover:text-white transition text-sm border-b border-gray-100">قانون عقوبات</button>
-                                <button onclick="loadSubject('تجاري')" class="text-right py-3 px-6 hover:bg-primary hover:text-white transition text-sm border-b border-gray-100">قانون تجاري</button>
-                                <button onclick="loadSubject('إنجليزي')" class="text-right py-3 px-6 hover:bg-primary hover:text-white transition text-sm border-b border-gray-100">إنجليزي قانوني</button>
-                            </div>
-                            <div class="p-3 text-sm text-gray-400 italic">الترم الثاني (قريباً)</div>
-                        </div>
-                    </div>
-
-                    <!-- Year 4 -->
-                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-100 flex justify-between items-center text-gray-400">
-                        <span>الفرقة الرابعة</span>
-                        <span class="text-[10px] bg-gray-200 px-2 py-1 rounded text-gray-500">قريباً</span>
-                    </div>
-                </div>
+          <div class="space-y-3">
+            <!-- Year 1 & 2 -->
+            <div
+              class="p-4 bg-gray-50 rounded-xl border border-gray-100 flex justify-between items-center text-gray-400"
+            >
+              <span>الفرقة الأولى</span>
+              <span
+                class="text-[10px] bg-gray-200 px-2 py-1 rounded text-gray-500"
+                >قريباً</span
+              >
             </div>
-        </aside>
-
-        <!-- Main Content Area -->
-        <main class="lg:w-3/4 bg-white rounded-2xl shadow-sm p-6 min-h-[600px]" id="content-anchor">
-            
-            <!-- Default Home View -->
-            <div id="homeView" class="flex flex-col items-center justify-center h-full text-center py-20">
-                <div class="text-6xl mb-6 grayscale opacity-20 italic font-black text-primary">LAW FAMILY</div>
-                <h3 class="text-2xl font-bold text-primary mb-2">مرحباً بك في منصتك التعليمية</h3>
-                <p class="text-gray-500 max-w-md">قم باختيار المادة من القائمة الجانبية للوصول إلى الفيديوهات، الريكوردات، والملفات الدراسية.</p>
+            <div
+              class="p-4 bg-gray-50 rounded-xl border border-gray-100 flex justify-between items-center text-gray-400"
+            >
+              <span>الفرقة الثانية</span>
+              <span
+                class="text-[10px] bg-gray-200 px-2 py-1 rounded text-gray-500"
+                >قريباً</span
+              >
             </div>
 
-            <!-- Dynamic Subject View -->
-            <div id="subjectView" class="hidden">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="w-2 h-10 bg-accent rounded-full"></div>
-                    <h2 id="subjectNameDisplay" class="text-2xl md:text-3xl font-black text-primary italic">اسم المادة</h2>
+            <!-- Year 3 (Active) -->
+            <div
+              class="border border-blue-100 rounded-xl overflow-hidden shadow-sm"
+            >
+              <button
+                onclick="toggleElement('y3-content')"
+                class="w-full flex justify-between items-center p-4 bg-white hover:bg-blue-50 transition font-bold text-primary"
+              >
+                الفرقة الثالثة
+                <span
+                  class="text-[10px] bg-green-500 text-white px-2 py-1 rounded shadow-sm"
+                  >متاح</span
+                >
+              </button>
+              <div id="y3-content" class="bg-gray-50">
+                <div
+                  class="p-3 bg-gray-200 text-sm font-black text-primary border-b border-gray-300"
+                >
+                  الترم الأول (نشط)
                 </div>
-                
-                <!-- Filter Tabs -->
-                <div class="flex flex-wrap gap-2 mb-8 sticky top-[72px] bg-white py-2 z-20 border-b border-gray-50">
-                    <button onclick="filterContent('all', this)" class="tab-btn active-tab px-4 py-2 rounded-full bg-gray-100 text-sm font-bold transition hover:bg-gray-200">الكل</button>
-                    <button onclick="filterContent('video', this)" class="tab-btn px-4 py-2 rounded-full bg-gray-100 text-sm font-bold transition hover:bg-gray-200">📺 فيديوهات</button>
-                    <button onclick="filterContent('audio', this)" class="tab-btn px-4 py-2 rounded-full bg-gray-100 text-sm font-bold transition hover:bg-gray-200">🎙️ ريكوردات</button>
-                    <button onclick="filterContent('pdf', this)" class="tab-btn px-4 py-2 rounded-full bg-gray-100 text-sm font-bold transition hover:bg-gray-200">📄 ملفات PDF</button>
+                <div class="flex flex-col">
+                  <button
+                    onclick="loadSubject('مدني')"
+                    class="text-right py-3 px-6 hover:bg-primary hover:text-white transition text-sm border-b border-gray-100"
+                  >
+                    قانون مدني
+                  </button>
+                  <button
+                    onclick="loadSubject('عمل')"
+                    class="text-right py-3 px-6 hover:bg-primary hover:text-white transition text-sm border-b border-gray-100"
+                  >
+                    قانون عمل
+                  </button>
+                  <button
+                    onclick="loadSubject('عقوبات')"
+                    class="text-right py-3 px-6 hover:bg-primary hover:text-white transition text-sm border-b border-gray-100"
+                  >
+                    قانون عقوبات
+                  </button>
+                  <button
+                    onclick="loadSubject('تجاري')"
+                    class="text-right py-3 px-6 hover:bg-primary hover:text-white transition text-sm border-b border-gray-100"
+                  >
+                    قانون تجاري
+                  </button>
+                  <button
+                    onclick="loadSubject('إنجليزي')"
+                    class="text-right py-3 px-6 hover:bg-primary hover:text-white transition text-sm border-b border-gray-100"
+                  >
+                    إنجليزي قانوني
+                  </button>
                 </div>
-
-                <!-- Grid -->
-                <div id="resourceContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Injected via JS -->
+                <div class="p-3 text-sm text-gray-400 italic">
+                  الترم الثاني (قريباً)
                 </div>
+              </div>
             </div>
-        </main>
+
+            <!-- Year 4 -->
+            <div
+              class="p-4 bg-gray-50 rounded-xl border border-gray-100 flex justify-between items-center text-gray-400"
+            >
+              <span>الفرقة الرابعة</span>
+              <span
+                class="text-[10px] bg-gray-200 px-2 py-1 rounded text-gray-500"
+                >قريباً</span
+              >
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main
+        class="lg:w-3/4 bg-white rounded-2xl shadow-sm p-6 min-h-[600px]"
+        id="content-anchor"
+      >
+        <!-- Default Home View -->
+        <div
+          id="homeView"
+          class="flex flex-col items-center justify-center h-full text-center py-20"
+        >
+          <div
+            class="text-6xl mb-6 grayscale opacity-20 italic font-black text-primary"
+          >
+            LAW FAMILY
+          </div>
+          <h3 class="text-2xl font-bold text-primary mb-2">
+            مرحباً بك في منصتك التعليمية
+          </h3>
+          <p class="text-gray-500 max-w-md">
+            قم باختيار المادة من القائمة الجانبية للوصول إلى الفيديوهات،
+            الريكوردات، والملفات الدراسية.
+          </p>
+        </div>
+
+        <!-- Dynamic Subject View -->
+        <div id="subjectView" class="hidden">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-2 h-10 bg-accent rounded-full"></div>
+            <h2
+              id="subjectNameDisplay"
+              class="text-2xl md:text-3xl font-black text-primary italic"
+            >
+              اسم المادة
+            </h2>
+          </div>
+
+          <!-- Filter Tabs -->
+          <div
+            class="flex flex-wrap gap-2 mb-8 sticky top-[72px] bg-white py-2 z-20 border-b border-gray-50"
+          >
+            <button
+              onclick="filterContent('all', this)"
+              class="tab-btn active-tab px-4 py-2 rounded-full bg-gray-100 text-sm font-bold transition hover:bg-gray-200"
+            >
+              الكل
+            </button>
+            <button
+              onclick="filterContent('video', this)"
+              class="tab-btn px-4 py-2 rounded-full bg-gray-100 text-sm font-bold transition hover:bg-gray-200"
+            >
+              📺 فيديوهات
+            </button>
+            <button
+              onclick="filterContent('audio', this)"
+              class="tab-btn px-4 py-2 rounded-full bg-gray-100 text-sm font-bold transition hover:bg-gray-200"
+            >
+              🎙️ ريكوردات
+            </button>
+            <button
+              onclick="filterContent('pdf', this)"
+              class="tab-btn px-4 py-2 rounded-full bg-gray-100 text-sm font-bold transition hover:bg-gray-200"
+            >
+              📄 ملفات PDF
+            </button>
+          </div>
+
+          <!-- Grid -->
+          <div
+            id="resourceContainer"
+            class="grid grid-cols-1 md:grid-cols-2 gap-6"
+          >
+            <!-- Injected via JS -->
+          </div>
+        </div>
+      </main>
     </div>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12 mt-12 border-t-4 border-accent">
-        <div class="container mx-auto px-4 text-center">
-            <h4 class="text-xl font-black mb-2 tracking-widest uppercase">Law <span class="text-accent">Family</span> Academy</h4>
-            <p class="text-gray-400 text-sm mb-6">المكان الأول لطلاب القانون في مصر والوطن العربي</p>
-            <div class="flex justify-center gap-4 mb-8">
-                <!-- Simple Social Placeholders -->
-                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer hover:bg-accent transition">f</div>
-                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer hover:bg-accent transition">t</div>
-                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer hover:bg-accent transition">y</div>
-            </div>
-            <p class="text-xs text-gray-600 tracking-widest">حقوق الطبع والنشر &copy; 2024 - جميع الحقوق محفوظة</p>
+      <div class="container mx-auto px-4 text-center">
+        <h4 class="text-xl font-black mb-2 tracking-widest uppercase">
+          Law <span class="text-accent">Family</span> Academy
+        </h4>
+        <p class="text-gray-400 text-sm mb-6">
+          المكان الأول لطلاب القانون في مصر والوطن العربي
+        </p>
+        <div class="flex justify-center gap-4 mb-8">
+          <!-- Simple Social Placeholders -->
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer hover:bg-accent transition"
+          >
+            f
+          </div>
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer hover:bg-accent transition"
+          >
+            t
+          </div>
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer hover:bg-accent transition"
+          >
+            y
+          </div>
         </div>
+        <p class="text-xs text-gray-600 tracking-widest">
+          حقوق الطبع والنشر &copy; 2024 - جميع الحقوق محفوظة
+        </p>
+      </div>
     </footer>
 
     <script>
-        const materials = {
-            'مدني': [
-                { type: 'video', title: 'شرح أركان العقد الأساسية', link: 'https://youtube.com/...', desc: 'شرح مفصل لكافة أركان العقد على يوتيوب' },
-                { type: 'audio', title: 'بصمة مقدمة القانون المدني', link: 'https://t.me/...', desc: 'ريكورد توضيحي من قناة التليجرام' },
-                { type: 'pdf', title: 'ملخص مادة المدني (الترم الأول)', link: '#', desc: 'ملف PDF شامل للمراجعة' }
-            ],
-            'تجاري': [
-                { type: 'video', title: 'محاضرة الأعمال التجارية', link: 'https://youtu.be/9kGHp3dAyNQ?si=uAxDzBG1joOxfSPd', desc: 'شرح فيديو يوتيوب من البداية' },
-                { type: 'video', title: 'زتونة شركة المساهمة', link: 'https://youtu.be/9kGHp3dAyNQ?si=uAxDzBG1joOxfSPd', desc: 'مراجعة سريعة لأهم النقاط' },
-                { type: 'audio', title: 'ريكورد القانون التجاري', link: 'https://t.me/Law_family_Alex2/2115', desc: 'بصمة صوتية شرح مفصل' },
-                { type: 'pdf', title: 'ملخص شركة المساهمة', link: 'https://t.me/Law_family_Alex2/2167', desc: 'ملف PDF ملخص وقوي' }
-            ],
-            'عمل': [
-                { type: 'video', title: 'شرح عقد العمل الفردي', link: '#', desc: 'محاضرة فيديو كاملة' },
-                { type: 'audio', title: 'ريكورد مراجعة قانون العمل', link: '#', desc: 'تسجيل صوتي لأهم نقاط مادة العمل' },
-                { type: 'pdf', title: 'ملزمة قانون العمل', link: '#', desc: 'ملف جاهز للطباعة' }
-            ],
-            'عقوبات': [
-                { type: 'video', title: 'محاضرة الجرائم والعقوبات', link: '#', desc: 'شرح فيديو يوتيوب' },
-                { type: 'audio', title: 'ريكورد شرح قانون العقوبات', link: '#', desc: 'تسجيل تيليجرام' },
-                { type: 'pdf', title: 'ملخص العقوبات', link: '#', desc: 'مذكرة شرح مبسط' }
-            ],
-            'إنجليزي': [
-                { type: 'video', title: 'Legal Terms Lecture', link: '#', desc: 'فيديو شرح المصطلحات القانونية' },
-                { type: 'audio', title: 'Audio Pronunciation Guide', link: '#', desc: 'ريكورد نطق المصطلحات' },
-                { type: 'pdf', title: 'English Materials', link: '#', desc: 'ملزمة المادة' }
-            ]
-        };
+      const materials = {
+        مدني: [
+          {
+            type: "video",
+            title: "شرح أركان العقد الأساسية",
+            link: "https://youtube.com/...",
+            desc: "شرح مفصل لكافة أركان العقد على يوتيوب",
+          },
+          {
+            type: "audio",
+            title: "بصمة مقدمة القانون المدني",
+            link: "https://t.me/...",
+            desc: "ريكورد توضيحي من قناة التليجرام",
+          },
+          {
+            type: "pdf",
+            title: "ملخص مادة المدني (الترم الأول)",
+            link: "#",
+            desc: "ملف PDF شامل للمراجعة",
+          },
+        ],
+        تجاري: [
+          {
+            type: "video",
+            title: "محاضرة الأعمال التجارية",
+            link: "https://youtu.be/9kGHp3dAyNQ?si=uAxDzBG1joOxfSPd",
+            desc: "شرح فيديو يوتيوب من البداية",
+          },
+          {
+            type: "video",
+            title: "زتونة شركة المساهمة",
+            link: "https://youtu.be/9kGHp3dAyNQ?si=uAxDzBG1joOxfSPd",
+            desc: "مراجعة سريعة لأهم النقاط",
+          },
+          {
+            type: "audio",
+            title: "ريكورد القانون التجاري",
+            link: "https://t.me/Law_family_Alex2/2115",
+            desc: "بصمة صوتية شرح مفصل",
+          },
+          {
+            type: "pdf",
+            title: "ملخص شركة المساهمة",
+            link: "https://t.me/Law_family_Alex2/2167",
+            desc: "ملف PDF ملخص وقوي",
+          },
+        ],
+        عمل: [
+          {
+            type: "video",
+            title: "شرح عقد العمل الفردي",
+            link: "#",
+            desc: "محاضرة فيديو كاملة",
+          },
+          {
+            type: "audio",
+            title: "ريكورد مراجعة قانون العمل",
+            link: "#",
+            desc: "تسجيل صوتي لأهم نقاط مادة العمل",
+          },
+          {
+            type: "pdf",
+            title: "ملزمة قانون العمل",
+            link: "#",
+            desc: "ملف جاهز للطباعة",
+          },
+        ],
+        عقوبات: [
+          {
+            type: "video",
+            title: "محاضرة الجرائم والعقوبات",
+            link: "#",
+            desc: "شرح فيديو يوتيوب",
+          },
+          {
+            type: "audio",
+            title: "ريكورد شرح قانون العقوبات",
+            link: "#",
+            desc: "تسجيل تيليجرام",
+          },
+          {
+            type: "pdf",
+            title: "ملخص العقوبات",
+            link: "#",
+            desc: "مذكرة شرح مبسط",
+          },
+        ],
+        إنجليزي: [
+          {
+            type: "video",
+            title: "Legal Terms Lecture",
+            link: "#",
+            desc: "فيديو شرح المصطلحات القانونية",
+          },
+          {
+            type: "audio",
+            title: "Audio Pronunciation Guide",
+            link: "#",
+            desc: "ريكورد نطق المصطلحات",
+          },
+          {
+            type: "pdf",
+            title: "English Materials",
+            link: "#",
+            desc: "ملزمة المادة",
+          },
+        ],
+      };
 
-        let currentSubject = '';
+      let currentSubject = "";
 
-        function toggleElement(id) {
-            const el = document.getElementById(id);
-            el.classList.toggle('hidden');
-        }
+      function toggleElement(id) {
+        const el = document.getElementById(id);
+        el.classList.toggle("hidden");
+      }
 
-        function loadSubject(name) {
-            currentSubject = name;
-            document.getElementById('homeView').classList.add('hidden');
-            document.getElementById('subjectView').classList.remove('hidden');
-            document.getElementById('subjectNameDisplay').innerText = "قانون " + name;
+      function loadSubject(name) {
+        currentSubject = name;
+        document.getElementById("homeView").classList.add("hidden");
+        document.getElementById("subjectView").classList.remove("hidden");
+        document.getElementById("subjectNameDisplay").innerText =
+          "قانون " + name;
 
-            // Reset Tabs
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active-tab'));
-            document.querySelector('.tab-btn[onclick*="all"]').classList.add('active-tab');
+        // Reset Tabs
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((btn) => btn.classList.remove("active-tab"));
+        document
+          .querySelector('.tab-btn[onclick*="all"]')
+          .classList.add("active-tab");
 
-            renderResources('all');
+        renderResources("all");
 
-            // Responsive Scroll
-            const offset = 100;
-            const element = document.getElementById('content-anchor');
-            const position = element.getBoundingClientRect().top + window.pageYOffset - offset;
-            window.scrollTo({ top: position, behavior: 'smooth' });
-        }
+        // Responsive Scroll
+        const offset = 100;
+        const element = document.getElementById("content-anchor");
+        const position =
+          element.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: position, behavior: "smooth" });
+      }
 
-        function renderResources(filter) {
-            const container = document.getElementById('resourceContainer');
-            const data = materials[currentSubject] || [];
-            const filtered = filter === 'all' ? data : data.filter(i => i.type === filter);
+      function renderResources(filter) {
+        const container = document.getElementById("resourceContainer");
+        const data = materials[currentSubject] || [];
+        const filtered =
+          filter === "all" ? data : data.filter((i) => i.type === filter);
 
-            if (filtered.length === 0) {
-                container.innerHTML = `
+        if (filtered.length === 0) {
+          container.innerHTML = `
                     <div class="col-span-full py-20 text-center text-gray-400">
                         <p class="text-lg">لا يوجد محتوى متوفر حالياً في هذا القسم</p>
                     </div>
                 `;
-                return;
+          return;
+        }
+
+        container.innerHTML = filtered
+          .map((item) => {
+            let color = "bg-red-600";
+            let btnTxt = "شاهد المحاضرة";
+            let icon = "📺";
+
+            if (item.type === "audio") {
+              color = "bg-blue-600";
+              btnTxt = "اسمع الريكورد";
+              icon = "🎙️";
+            }
+            if (item.type === "pdf") {
+              color = "bg-green-600";
+              btnTxt = "تحميل الملف";
+              icon = "📄";
             }
 
-            container.innerHTML = filtered.map(item => {
-                let color = 'bg-red-600';
-                let btnTxt = 'شاهد المحاضرة';
-                let icon = '📺';
-
-                if(item.type === 'audio') { color = 'bg-blue-600'; btnTxt = 'اسمع الريكورد'; icon = '🎙️'; }
-                if(item.type === 'pdf') { color = 'bg-green-600'; btnTxt = 'تحميل الملف'; icon = '📄'; }
-
-                return `
+            return `
                     <div class="border border-gray-100 rounded-2xl p-5 hover:border-primary hover:shadow-xl transition-all group bg-white">
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-xs font-black uppercase tracking-widest text-accent">${icon} ${item.type}</span>
@@ -264,20 +515,23 @@
                         </a>
                     </div>
                 `;
-            }).join('');
-        }
+          })
+          .join("");
+      }
 
-        function filterContent(type, btn) {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active-tab'));
-            btn.classList.add('active-tab');
-            renderResources(type);
-        }
+      function filterContent(type, btn) {
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active-tab"));
+        btn.classList.add("active-tab");
+        renderResources(type);
+      }
 
-        function showHome() {
-            document.getElementById('homeView').classList.remove('hidden');
-            document.getElementById('subjectView').classList.add('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+      function showHome() {
+        document.getElementById("homeView").classList.remove("hidden");
+        document.getElementById("subjectView").classList.add("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     </script>
-</body>
+  </body>
 </html>
